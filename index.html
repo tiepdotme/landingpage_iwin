@@ -1,0 +1,337 @@
+
+<html style="font-size: 100px;">
+<head lang="en">
+    <title>I Win</title>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta content="application/xhtml+xml;charset=UTF-8" http-equiv="Content-Type">
+    <meta content="no-cache,must-revalidate" http-equiv="Cache-Control">
+    <meta content="no-cache" http-equiv="pragma">
+    <meta content="0" http-equiv="expires">
+    <meta content="telephone=no, address=no" name="format-detection">
+    <meta content="user-scalable=no" name="viewport">
+	<meta http-equiv="Access-Control-Allow-Origin" content="https://dev.dfewung.com">
+	
+    <meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0" name="viewport">
+    <link rel="stylesheet" href="css/base.css?v=19">
+    <link rel="stylesheet" href="css/reveal.css">
+	<link rel="stylesheet" type="text/css" href="css/dmaku.css?v=2" />
+	<link rel="icon" href="images/favicon.ico" type="image/x-icon">
+   
+	<link rel="preconnect" href="https://openinstall.com" crossorigin="use-credentials"/>
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/home.js?v=12221"></script>
+	<script src="./lib/device-uuid.js"></script>
+	<script src="./mobile/layer.js"></script>
+	<script type="text/javascript" charset="utf-8" src="./js/openinstall.js?v=0306"></script>
+	<script type='text/javascript' src="./js/clipboard.min.js"></script>
+	<!--<script type="text/javascript" src="https://sqjbjore.com/js/layer.js"></script>  -->
+
+    <style>  
+        button {  
+            border: 0;  
+        }  
+  
+        .btn {  
+            background-color: #ED5565;  
+            color: #fff;  
+            padding: 20px;  
+            margin: 10px 30px;  
+            border-radius: 5px;  
+            border-bottom: 3px solid #DA4453;  
+        }a{color:darkslateblue;} 
+	
+	.slider{
+		width: 90%;
+		height: 4rem;
+		position: absolute;
+		bottom: 3.4rem;
+		text-align: center;
+		float: left;
+		margin-left: 5%;
+	}
+.ads{
+    position:fixed;
+    right:0.2rem;
+    bottom:1.7rem;
+    width:200px;
+    height:200px;
+} 
+    </style> 
+</head>
+<body>
+
+  <div id="contain" hidden>
+	  <div class='wrap' id='wrap1'>
+		<div class='part' id='part1'></div>
+	  </div>
+
+	  <div class='wrap' id='wrap2'>
+		<div class='part' id='part2'></div>
+	  </div>
+
+	  <div class='wrap' id='wrap3'>
+		<div class='part' id='part3'></div>
+	  </div>
+
+	  <div class='wrap' id='wrap4'>
+		<div class='part' id='part4'></div>
+	  </div>
+	  <div style=" font-size: 0.2rem;padding-top: 1.3rem;text-align: center;">Đang tiến hành tải số liệu</div>
+</div>
+
+<div class="container" id="container">
+		<div class="main_background">
+			<img class="img-main" src="images/22_00.jpg?v=0218">
+			<div class="customer_btn ">
+				<a class="btn-top" id="btn-top" href="https://core.vchat.vn/service/chat?code=2154&jwt=50a941b33af9834db2e56f2aea64511f"  target="_blank">
+					<img class="img-main" src="images/customer.png?" alt>
+				</a>
+			</div>
+			<div class="ads">
+					<img class="img-main" src="images/iwin68.png?" alt>
+			</div>
+			<div class="download_btn">
+				<a class="btn-bottom download animated tada infinite" id="downloadButton" href="javascript:;"
+				   data-animation="none">
+				   <img class="img-main" src="images/download.png?" alt>
+				</a>
+			</div>
+			<img class="img-main" src="images/22_02.jpg?v=0218">
+			<img class="img-main" src="images/22_03.jpg?v=0218">
+			<img class="img-main" src="images/22_04.jpg?v=0118">
+		</div>
+</div>
+<footer id="footer" class="">
+        <div class="footer_fixed">
+            <div class="banner" style="min-height: 1.4rem;">
+                <span class="img_icon">
+                    <img src="./images/icon.png?v=0608" alt="">
+                </span>
+                <div class="describe_in_word">
+                    <div class="label_one">I Win</div>
+					<div style="clear: both"></div>
+                    <div class="label_three">Hàng vạn người chơi Tỉ lệ trúng cao
+                        <img class="star" src="./images/star.png">
+                    </div>
+                    
+                    
+                </div>
+                <a href="javascript:;" data-dl="" class="log_in download" id="log_in">Vào APP</a>
+            </div>
+			<div class="label_two" style="display: block;padding-left: 0.3rem;">
+                        <div class="gfb">Đăng ký nhận khuyến mãi</div>
+                        <div class="lzb"> Một bước thành danh</div>
+                        <div class="czq">Mỹ nhân luôn bên bạn</div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+<script type="text/javascript">
+  
+ 
+	$('#contain').hide();
+ 
+    var data = OpenInstall.parseUrlParams();
+	var channel=default_channel;
+	var uuid =null;
+	$.getJSON("https://jsonip.com?callback=?", function(data) {
+		var deviceUuid= new DeviceUUID();
+		uuid=deviceUuid.get(data.ip);
+	});
+	if(!os.isPc)
+	{
+		$('.ads').hide();
+	}
+
+	
+   !function(win) {
+    var win_doc = win.document
+        , win_doc_doc = win_doc.documentElement
+        , psd_w = 720 / 100
+        , evt_fn = "orientationchange"in win ? "orientationchange" : "resize"
+        , set_size = function() {
+        var page_w = win_doc_doc.clientWidth || 320;
+        page_w > 720 && (page_w = 720),
+            win_doc_doc.style.fontSize = page_w / psd_w + "px";
+    };
+    set_size();
+    win_doc.addEventListener && (win.addEventListener(evt_fn, set_size, !1),
+        win_doc.addEventListener("DOMContentLoaded", set_size, !1));
+  }(window);
+   
+	function copy(message) {
+	    var input = document.createElement("input");
+	    input.value = message;
+	    document.body.appendChild(input);
+	    input.select();
+	    input.setSelectionRange(0, input.value.length), document.execCommand("Copy");
+	    document.body.removeChild(input);
+	}
+	if(data.channelCode===undefined && data.code===undefined)
+	{
+		channel=default_channel;
+		data.channelCode=default_channel;
+		
+	}
+	else if(data.code!==undefined)
+	{
+		channel=proxy_channel;
+		data.channelCode=proxy_channel;
+	}
+	else 
+	{
+		channel=data.channelCode;
+	}
+
+	function guid() 
+	{
+	    function S4() {
+	       return (((1+Math.random())*0x10000)|0).toString(16).substring(1);
+	    }
+	    return (S4()+S4()+"-"+S4()+"-"+S4()+"-"+S4()+"-"+S4()+S4()+S4());
+	}
+	
+	const clipboard = function(text, event) {
+	  const cb = new Clipboard('.t', {
+		  text:function(){return  text}
+	  })
+	  cb.on('success', function(e){
+		  cb.off('error')
+		  cb.off('success')
+	  })
+	  cb.on('error', function(e) {
+		  cb.off('error')
+		  cb.off('success')
+	  })
+	  cb.onClick(event)
+	}	
+
+	data.channel=data.channelCode;
+	let showTimer=null;
+	var showRotate= function(){
+		showTimer &&  clearTimeout(showTimer)
+		$('#contain').show();
+		showTimer=setTimeout(function () {
+			$('#contain').hide();
+		},2000);
+	};
+	
+    new OpenInstall({
+        appKey: app_Key,
+		channelCode:channel,
+		onready: function () {
+            var m = this;
+            var button = $(".download");
+	 
+            button.click(function () {
+			showRotate();
+
+			m.wakeupOrInstall();
+	        var index = button.index(this);
+				var act='download';
+				if(!data['code'])
+				{
+					var pid=channel;
+					var type=1;
+					gid=getCookie('iwin_uuid')
+					if(gid==='')
+					{
+						gid=guid();
+						setCookie('iwin_uuid',gid,366);
+					}
+					console.log("gid::"+gid);
+					$.ajax({
+					url:localHost,
+					type:'post',
+					data:{"act":act,"type":type,"pid":pid,"uuid":uuid,"gid":gid},
+					dataType:'json',
+					success:function(data){
+						console.log(data);
+                    },
+					fail:function(data)
+					{
+						console.log(data);
+					}
+					});
+				}
+				else
+				{
+					var type=2;
+					console.log(data['code']);
+					gid=getCookie('iwin_uuid')
+					if(gid==='')
+					{
+						gid=guid();
+						setCookie('iwin_uuid',gid,366);
+					}
+					console.log("gid::"+gid);
+					$.ajax({
+					url:localHost,
+					type:'post',
+					data:{"act":act, "type":type,"code":data['code'],"uuid":uuid,"gid":gid},
+					dataType:'json',
+					success:function(data){
+						console.log(data);
+                    },
+					fail:function(data)
+					{
+						console.log(data);
+					}
+					});
+				}
+            });
+        },
+		onerror:function()
+		{
+			var u = navigator.userAgent;
+                var isIOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
+                if (isIOS) {
+					$('.download').attr("href",ios_download);
+				}
+				else
+				{
+					$('.download').attr("href",android_download);
+				}
+		}
+    }, data);
+	
+	const btns = document.querySelectorAll('.download');
+	btns.forEach((btn)=>{
+	btn.addEventListener('click',  function(event) {
+		var sUserAgent = navigator.userAgent;
+	   var isHuawei = sUserAgent.match(/huawei/i);
+	   var isHuawei2 = sUserAgent.match(/dub-/i);
+	   var isHonor = sUserAgent.match(/honor/i) ;
+	   var isOppo = sUserAgent.match(/oppo/i) ;
+	   var isVivo = sUserAgent.match(/vivo/i);
+	   
+	   if(false){
+			var text = 'Game Bài IWIN xin lưu ý: Nếu trong quá trình cài đặt gặp phải bất cứ thông báo nào xin vui lòng bỏ qua, Game bài IWIN không có bất cứ nguy hại nào. Xin quý khách yên tâm sử dụng!';
+			if( isOppo || isVivo ){
+			  text = 'Game Bài IWIN xin lưu ý: Nếu trong quá trình cài đặt gặp phải bất cứ thông báo nào xin vui lòng bỏ qua, Game bài IWIN không có bất cứ nguy hại nào. Xin quý khách yên tâm sử dụng!';
+			}
+			layer.open({
+			content: text
+			,style: 'color:#000;'
+			,btn: 'OK'
+			});
+		}
+		var copyText= null;
+		if(data.code!==undefined)
+			{
+				copyText='agent_id='+data.code;
+			}
+			else
+			{
+				copyText='channel_id='+channel;
+			}
+			clipboard(copyText, event);
+		});
+	});
+</script>
+</body>
+</html>
