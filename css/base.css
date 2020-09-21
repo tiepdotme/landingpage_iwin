@@ -345,7 +345,8 @@ a {
 }
 
 .download_btn {
-	position: relative;
+	position: absolute;
+    top:0;
     bottom: -1rem;
     left: 50%;
     max-width: 750px;
