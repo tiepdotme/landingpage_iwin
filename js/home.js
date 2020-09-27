@@ -1,4 +1,4 @@
-var cssText = "#limit-tip{position: fixed; left:0; top:0; background: rgba(0,0,0,0.9); filter:alpha(opacity=80); width: 100%; height:100%; z-index: 100;} #limit-tip p{text-align: center; margin-top: 10%; padding:0 5%;}";
+var cssText = "#limit-tip{position: fixed; left:0; top:0; background: rgba(0,0,0,0.9); filter:alpha(opacity=80); width: 100%; height:100%; z-index: 100;} #limit-tip p{text-align: center; margin-top: -5%; padding:0 5%;}";
 function loadStyleText() {
     var style = document.createElement('style');
     style.rel = 'stylesheet';
@@ -30,7 +30,7 @@ var os = function() {
      };
 }();
 
-function is_limit() {
+function is_weixin() {
     var ua = navigator.userAgent.toLowerCase();
     if (ua.match(/MicroMessenger/i) == "micromessenger") {
         return true;
@@ -38,9 +38,20 @@ function is_limit() {
         return false;
     }
 }
+
+function is_limit() {
+    var ua = navigator.userAgent.toLowerCase();
+	if (ua.indexOf("fban") == -1 && ua.indexOf("fbav") == -1 && ua.indexOf("zalo") == -1)
+	{
+        return false;
+    } else {
+        return true;
+    }
+}
+
 function checkIsIos() {
     var u = navigator.userAgent;
-    var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+    var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //iosç»ˆç«¯
     if(isiOS){
         return true;
     }
@@ -53,14 +64,16 @@ function loadHtml() {
 
     var div = document.createElement('div');
     div.id = 'limit-tip';
-    if (checkIsIos()) {
-        div.innerHTML = '<p><img src="images/live_limit_ios.png" alt="请在浏览器打开" style="max-width: 100%; height: auto;"/></p>';
-    } else {
-        div.innerHTML = '<p><img src="images/live_limit.png" alt="请在浏览器打开" style="max-width: 100%; height: auto;"/></p>';
-    }
+    if (isiOS) {
+             div.innerHTML = '<p><img src="./images/live_ios.png?v=3" alt="Vui lÃ²ng má»Ÿ trong trÃ¬nh duyá»‡t cá»§a báº¡n" style="max-width: 100%; height: auto;"/></p>';
+
+        } else {
+            div.innerHTML = '<p><img src="./images/live_Android.png" alt="Vui lÃ²ng má»Ÿ trong trÃ¬nh duyá»‡t cá»§a báº¡n" style="max-width: 100%; height: auto;"/></p>';
+        }
     // console.log(div)
     document.body.appendChild(div);
 }
+
 function Base64() {
     // private property
     _keyStr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
@@ -183,10 +196,10 @@ function Base64() {
 	function checkCookie(cookieName){
 		var user=getCookie(cookieName);
 		if (user!=""){
-			alert("欢迎 " + user + " 再次访问");
+			alert("æ¬¢è¿Ž " + user + " å†æ¬¡è®¿é—®");
 		}
 		else {
-			user = prompt("请输入你的名字:","");
+			user = prompt("è¯·è¾“å…¥ä½ çš„åå­—:","");
 			  if (user!="" && user!=null){
 				setCookie("username",user,30);
 			}
@@ -195,7 +208,7 @@ function Base64() {
 	let localHost= './call.php';
 	let default_channel='10000000000';
 	let proxy_channel='20000000000';
-	let app_Key="wkb3pq";
-	let ios_download="https://kok.16888888888888.com/ttbn2rn4";
-	let android_download="https://www.yltmygs.com/package/IWin090Eqyki.slk";
+	let app_Key="72BK6E6REA2AHH";
+	let ios_download="https://gogoios.com/MZBj";
+	let android_download="https://www.yltmygs.com/package/IWin08222Aiveg.slk";
 	
